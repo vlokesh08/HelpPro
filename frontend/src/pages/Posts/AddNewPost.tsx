@@ -4,6 +4,8 @@ import { useSelector } from "react-redux";
 import { Button } from "@/components/ui/button";
 import { useNavigate } from "react-router-dom";
 import { toast } from "sonner";
+import { Input } from "@/components/ui/input";
+import { Textarea } from "@/components/ui/textarea";
 
 const AddNewPost = () => {
   const [title, setTitle] = useState("");
@@ -133,7 +135,7 @@ const AddNewPost = () => {
     );
     if (res.status === 200) {
       toast("Post added successfully");
-      navigate("/allposts");
+      navigate("/home");
     } else {
       toast("Error in adding post");
     }
@@ -141,7 +143,7 @@ const AddNewPost = () => {
 
   return (
     <div className="m-5 ">
-      <div className="isolate bg-white  sm:py-15 lg:px-4">
+      <div className="isolate bg-white dark:bg-secondcolor  sm:py-15 lg:px-4">
         <div
           className="inset-x-0 top-[-10rem]  transform-gpu overflow-hidden blur-3xl sm:top-[-20rem]"
           aria-hidden="true"
@@ -152,208 +154,223 @@ const AddNewPost = () => {
           ></div>
         </div>
         <div className="mx-auto mt-5 max-w-2xl text-center">
-          <h2 className="text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">
+          <h2 className="text-3xl font-bold tracking-tight text-gray-900 dark:text-white sm:text-4xl">
             Add New Post
           </h2>
           <p className="mt-2 text-lg leading-8 text-gray-600"></p>
         </div>
         <div className="flex flex-col gap-5 justify-center">
           <div className="flex flex-col md:flex-row justify-center gap-7">
-          <div className="">
-            <div className="grid grid-cols-1 gap-x-8 gap-y-6 sm:grid-cols-2">
-              <div className="sm:col-span-2">
-                <label className="block text-sm font-semibold leading-6 text-gray-900">
-                  Title
-                </label>
-                <div className="mt-2.5">
-                  <input
-                    type="text"
-                    name="company"
-                    id="company"
-                    value={title}
-                    onChange={(e) => setTitle(e.target.value)}
-                    className="block w-full rounded-md border-0 px-3.5 py-2 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
-                  />
+            <div className="">
+              <div className="grid grid-cols-1 gap-x-8 gap-y-6 sm:grid-cols-2">
+                <div className="sm:col-span-2">
+                  <label className="block text-sm font-semibold leading-6 text-gray-900 dark:text-white">
+                    Title
+                  </label>
+                  <div className="mt-2.5">
+                    <Input
+                      type="text"
+                      name="company"
+                      id="company"
+                      value={title}
+                      onChange={(e) => setTitle(e.target.value)}
+                      className="block w-full rounded-md border-0 px-3.5 py-2 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-700 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
+                    />
+                  </div>
                 </div>
-              </div>
 
-              <div>
-                <label className="block text-sm font-semibold leading-6 text-gray-900">
-                  Bounty Amount
-                </label>
-                <div className="mt-2.5">
-                  <input
-                    type="text"
-                    name="first-name"
-                    id="first-name"
-                    value={bounty1}
-                    onChange={(e) => setBounty1(e.target.value)}
-                    className="block w-full rounded-md border-0 px-3.5 py-2 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
-                  />
+                <div>
+                  <label className="block text-sm font-semibold leading-6 text-gray-900 dark:text-white">
+                    Bounty Amount
+                  </label>
+                  <div className="mt-2.5">
+                    <Input
+                      type="text"
+                      name="first-name"
+                      id="first-name"
+                      value={bounty1}
+                      onChange={(e) => setBounty1(e.target.value)}
+                      className="block w-full rounded-md border-0 px-3.5 py-2 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-700 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
+                    />
+                  </div>
                 </div>
-              </div>
-              <div>
-                <label className="block text-sm font-semibold leading-6 text-gray-900">
-                  Bounty Amount
-                </label>
-                <div className="mt-2.5">
-                  <input
-                    type="text"
-                    name="last-name"
-                    id="last-name"
-                    value={bounty2}
-                    onChange={(e) => setBounty2(e.target.value)}
-                    className="block w-full rounded-md border-0 px-3.5 py-2 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
-                  />
+                <div>
+                  <label className="block text-sm font-semibold leading-6 text-gray-900 dark:text-white">
+                    Bounty Amount
+                  </label>
+                  <div className="mt-2.5">
+                    <Input
+                      type="text"
+                      name="last-name"
+                      id="last-name"
+                      value={bounty2}
+                      onChange={(e) => setBounty2(e.target.value)}
+                      className="block w-full rounded-md border-0 px-3.5 py-2 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-700 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
+                    />
+                  </div>
                 </div>
-              </div>
-              <div className="sm:col-span-2">
-                <label className="block text-sm font-semibold leading-6 text-gray-900">
-                  Tech Stack{" "}
-                  <span className=" text-xs font-light">
-                    (Give them comma separated values like: HTML, CSS, JS)
-                  </span>
-                </label>
-                <div className="mt-2.5">
-                  <input
-                    type="email"
-                    name="email"
-                    id="email"
-                    value={techstack}
-                    onChange={(e) => setTechstack(e.target.value)}
-                    className="block w-full rounded-md border-0 px-3.5 py-2 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
-                  />
+                <div className="sm:col-span-2">
+                  <label className="block text-sm font-semibold leading-6 text-gray-900 dark:text-white">
+                    Tech Stack{" "}
+                    <span className=" text-xs font-light dark:text-white">
+                      (Give them comma separated values like: HTML, CSS, JS)
+                    </span>
+                  </label>
+                  <div className="mt-2.5">
+                    <Input
+                      type="email"
+                      name="email"
+                      id="email"
+                      value={techstack}
+                      onChange={(e) => setTechstack(e.target.value)}
+                      className="block w-full rounded-md border-0 px-3.5 py-2 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-700 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
+                    />
+                  </div>
                 </div>
-              </div>
 
-              <div className="sm:col-span-2">
-                <label className="block text-sm font-semibold leading-6 text-gray-900">
-                  Image URL
-                </label>
-                <div className="mt-2.5">
-                  <div className="flex justify-center w-full px-3">
-                    <div className="rounded-lg shadow-xl bg-gray-50  w-full">
-                      <div className="m-4">
-                        <span className="flex justify-center items-center text-[12px] mb-1 text-red-500">
-                          {message}
-                        </span>
-                        <div className="flex items-center justify-center w-full">
-                          <label className="flex cursor-pointer flex-col w-full h-32 border-2 rounded-md border-dashed hover:bg-gray-100 hover:border-gray-300">
-                            <div className="flex flex-col items-center justify-center pt-7">
-                              <svg
-                                xmlns="http://www.w3.org/2000/svg"
-                                className="w-12 h-12 text-gray-400 group-hover:text-gray-600"
-                                viewBox="0 0 20 20"
-                                fill="currentColor"
-                                aria-label="Upload icon"
-                              >
-                                <path
-                                  fillRule="evenodd"
-                                  d="M4 3a2 2 0 00-2 2v10a2 2 0 002 2h12a2 2 0 002-2V5a2 2 0 00-2-2H4zm12 12H4l4-8 3 6 2-4 3 6z"
-                                  clipRule="evenodd"
-                                />
-                              </svg>
-                              <p className="pt-1 text-sm tracking-wider text-gray-400 group-hover:text-gray-600">
-                                Select a photo
-                              </p>
-                            </div>
-                            <input
-                              type="file"
-                              onChange={handleFile}
-                              className="opacity-0"
-                              name="files[]"
-                            />
-                          </label>
-                        </div>
-                        <div className="flex flex-wrap gap-2 mt-2">
-                          {files.map((imageUrl, key) => (
-                            <div key={key} className="overflow-hidden relative">
-                              <i
-                                onClick={() => removeImage(imageUrl)}
-                                className="mdi mdi-close absolute right-1 hover:text-gray cursor-pointer"
-                              >
-                                x
-                              </i>
-                              <img
-                                className="h-20 w-20 rounded-md"
-                                src={imageUrl}
-                                alt={`Uploaded image ${key}`}
+                <div className="sm:col-span-2">
+                  <label className="block text-sm font-semibold leading-6 text-gray-900">
+                    Image URL
+                  </label>
+                  <div className="mt-2.5">
+                    <div className="flex justify-center w-full px-3">
+                      <div className="rounded-lg shadow-xl bg-gray-50  w-full">
+                        <div className="m-4">
+                          <span className="flex justify-center items-center text-[12px] mb-1 text-red-500">
+                            {message}
+                          </span>
+                          <div className="flex items-center justify-center w-full">
+                            <label className="flex cursor-pointer flex-col w-full h-32 border-2 rounded-md border-dashed hover:bg-gray-100 hover:border-gray-300">
+                              <div className="flex flex-col items-center justify-center pt-7">
+                                <svg
+                                  xmlns="http://www.w3.org/2000/svg"
+                                  className="w-12 h-12 text-gray-400 group-hover:text-gray-600"
+                                  viewBox="0 0 20 20"
+                                  fill="currentColor"
+                                  aria-label="Upload icon"
+                                >
+                                  <path
+                                    fillRule="evenodd"
+                                    d="M4 3a2 2 0 00-2 2v10a2 2 0 002 2h12a2 2 0 002-2V5a2 2 0 00-2-2H4zm12 12H4l4-8 3 6 2-4 3 6z"
+                                    clipRule="evenodd"
+                                  />
+                                </svg>
+                                <p className="pt-1 text-sm tracking-wider text-gray-400 group-hover:text-gray-600">
+                                  Select a photo
+                                </p>
+                              </div>
+                              <input
+                                type="file"
+                                onChange={handleFile}
+                                className="opacity-0"
+                                name="files[]"
                               />
-                            </div>
-                          ))}
+                            </label>
+                          </div>
+                          <div className="flex flex-wrap gap-2 mt-2">
+                            {files.map((imageUrl, key) => (
+                              <div
+                                key={key}
+                                className="overflow-hidden relative"
+                              >
+                                <i
+                                  onClick={() => removeImage(imageUrl)}
+                                  className="mdi mdi-close absolute right-1 hover:text-gray cursor-pointer"
+                                >
+                                  x
+                                </i>
+                                <img
+                                  className="h-20 w-20 rounded-md"
+                                  src={imageUrl}
+                                  alt={`Uploaded image ${key}`}
+                                />
+                              </div>
+                            ))}
+                          </div>
                         </div>
                       </div>
                     </div>
                   </div>
                 </div>
+                <div className="sm:col-span-2">
+                  <label className="block text-sm font-semibold leading-6 text-gray-900">
+                    End Date
+                  </label>
+                  <div className="relative mt-2.5">
+                    <Input
+                      type="date"
+                      name="date"
+                      id="date"
+                      value={date}
+                      onChange={(e) => setDate(e.target.value)}
+                      className="block w-full rounded-md border-0 px-3.5 py-2 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-700 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
+                    />
+                  </div>
+                </div>
+
+                <div className="sm:col-span-2">
+                  <label className="block text-sm font-semibold leading-6 text-gray-900">
+                    Links
+                  </label>
+                  <div className="flex justify-end">
+                    <Button className="mr-3" onClick={handleAddInput}>
+                      Add New Link
+                    </Button>
+                  </div>
+                  {inputs.map((input, index) => (
+                    <div key={index} className="flex flex-row m-2">
+                      <input
+                        type="text"
+                        value={input}
+                        className="block w-full rounded-md border-0  mr-3 px-3.5  text-gray-900 shadow-sm ring-1 ring-inset ring-gray-700 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
+                        onChange={(e) =>
+                          handleInputChange(index, e.target.value)
+                        }
+                      />
+                      <Button onClick={() => handleRemoveInput(index)}>
+                        -
+                      </Button>
+                    </div>
+                  ))}
+                </div>
               </div>
-              <div className="sm:col-span-2">
+            </div>
+            <div>
+              <div className="sm:col-span-2 w-[550px] h-[840px]">
                 <label className="block text-sm font-semibold leading-6 text-gray-900">
-                  End Date
+                  Description
                 </label>
-                <div className="relative mt-2.5">
-                  <input
-                    type="date"
-                    name="date"
-                    id="date"
-                    value={date}
-                    onChange={(e) => setDate(e.target.value)}
-                    className="block w-full rounded-md border-0 px-3.5 py-2 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
+                <div className="mt-2.5">
+                  <Textarea
+                    rows={parseInt("8")}
+                    name="message"
+                    id="message"
+                    value={body}
+                    onChange={(e) => setBody(e.target.value)}
+                    className="block w-full rounded-md border-0 px-3.5 py-2 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-700 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
                   />
                 </div>
               </div>
-
-              <div className="sm:col-span-2">
-                <label className="block text-sm font-semibold leading-6 text-gray-900">
-                  Links
-                </label>
-                <div className="flex justify-end">
-                  <Button className="mr-3" onClick={handleAddInput}>
-                    Add New Link
-                  </Button>
-                </div>
-                {inputs.map((input, index) => (
-                  <div key={index} className="flex flex-row m-2">
-                    <input
-                      type="text"
-                      value={input}
-                      className="block w-full rounded-md border-0  mr-3 px-3.5  text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
-                      onChange={(e) => handleInputChange(index, e.target.value)}
-                    />
-                    <Button onClick={() => handleRemoveInput(index)}>-</Button>
-                  </div>
-                ))}
-              </div>
-            </div>
-            
-          </div>
-          <div>
-            <div className="sm:col-span-2 w-[550px] h-[840px]">
-              <label className="block text-sm font-semibold leading-6 text-gray-900">
-                Description
-              </label>
-              <div className="mt-2.5">
-                <textarea
-                  rows={parseInt("8")}
-                  name="message"
-                  id="message"
-                  value={body}
-                  onChange={(e) => setBody(e.target.value)}
-                  className="block w-full rounded-md border-0 px-3.5 py-2 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
-                ></textarea>
-              </div>
             </div>
           </div>
-          </div>
-        <div className="mt-10 container my-12 flex justify-center">
+          <div className="mt-10 container my-12 flex justify-end ">
+            <div className="flex gap-3">
+            <a href="/home">
               <button
-                type="submit"
-                onClick={handleSubmit}
-                className="block w-full rounded-md bg-indigo-600 px-3.5 py-2.5 text-center text-sm font-semibold text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600"
+                className="block w-full dark:text-black rounded-md bg-white px-3.5 py-2.5 text-center text-sm font-semibold text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600"
               >
-                Let's talk
+                Cancel
               </button>
+            </a>
+            <button
+              type="submit"
+              onClick={handleSubmit}
+              className="block w-full rounded-md bg-indigo-600 px-3.5 py-2.5 text-center text-sm font-semibold text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600"
+            >
+              Post
+            </button>
             </div>
+          </div>
         </div>
       </div>
     </div>

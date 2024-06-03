@@ -20,6 +20,9 @@ module.exports = withMT ({
     extend: {
       colors: {
         border: "hsl(var(--border))",
+        maincolor : "#191919",
+        secondcolor : "#1d1d1d",
+        thirdcolor : "#2a2a2a",
         input: "hsl(var(--input))",
         ring: "hsl(var(--ring))",
         background: "hsl(var(--background))",

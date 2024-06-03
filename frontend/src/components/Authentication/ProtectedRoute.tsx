@@ -2,9 +2,10 @@ import {useSelector} from "react-redux"
 import {Navigate} from "react-router-dom"
 
 const ProtectedRoute = ({children} : any) => {
-    const user = useSelector((state: any) => state.user);
+    const user = localStorage.getItem("userInfo");
+    const data = JSON.parse(user as string);
     
-    if(!user.email) {
+    if(!data) {
         return <Navigate to="/" />
     }
  return children

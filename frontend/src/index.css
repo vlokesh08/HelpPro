@@ -34,10 +34,10 @@
  
     --radius: 0.5rem;
   }
- 
+
   .dark {
-    --background: 222.2 84% 4.9%;
-    --foreground: 210 40% 98%;
+    --background: 0 0% 10%; /* Updated background color for dark theme */
+    --foreground: 0 0% 10%;
  
     --card: 222.2 84% 4.9%;
     --card-foreground: 210 40% 98%;

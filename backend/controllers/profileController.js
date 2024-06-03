@@ -37,32 +37,32 @@ const editProfile = async (req, res) => {
             username:id,
         },{
             $set: {
-                // about: about,
-                // firstName: firstName,
-                // lastName: lastName ,
-                // country: country ,
-                // address: streetAddress ,
+                about: about,
+                firstName: firstName,
+                lastName: lastName ,
+                country: country ,
+                address: streetAddress ,
                 pic:pic,
-                // city: city ,
-                // state: region ,
-                // zipcode: postalCode ,
+                city: city ,
+                state: region ,
+                zipcode: postalCode ,
             }
         }
         
         );
-        // if(pro && profile){
-        //     res.status(201).json({
-        //         _id: pro._id,
-        //         username: pro.username,
-        //         email: pro.email,
-        //         pic: pro.pic,
-        //         token: generateToken(pro._id),
-        //       });
-        // }
-        // else{    
-        //     res.status(404);
-        //     throw new Error("Profile not found");
-        // }
+        if(pro && profile){
+            res.status(201).json({
+                _id: pro._id,
+                username: pro.username,
+                email: pro.email,
+                pic: pro.pic,
+                token: generateToken(pro._id),
+              });
+        }
+        else{    
+            res.status(404);
+            throw new Error("Profile not found");
+        }
 
     }
     catch (error) {

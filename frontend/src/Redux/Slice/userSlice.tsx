@@ -33,7 +33,6 @@ const userSlice = createSlice({
       state.user.email = email;
       state.user.pic = pic;
       state.user.token = token;
-      window.location.href = '/home';
     },
     loginFailure: (state) => {
       // Reset user state on login failure
@@ -41,7 +40,6 @@ const userSlice = createSlice({
     },
     logout: (state ) => {
       // Reset user state on logout
-      localStorage.removeItem('userInfo');
       
       state.user.username = "";
       state.user.email = "";

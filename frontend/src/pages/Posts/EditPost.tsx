@@ -91,7 +91,7 @@ const EditPost = ( props : any ) => {
             <button
               type="button"
               onClick = {handleEdit}
-              className="inline-flex items-center rounded-md bg-white px-3 py-2 text-sm font-semibold text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 hover:bg-gray-50"
+              className="inline-flex items-center rounded-md bg-white px-3 py-2 text-sm font-semibold text-gray-900 shadow-sm ring-1 ring-inset ring-gray-700 hover:bg-gray-50"
             >
               <svg
                 className="-ml-0.5 mr-1.5 h-5 w-5 text-gray-400"
@@ -109,7 +109,7 @@ const EditPost = ( props : any ) => {
             <button
               type="button"
               onClick = {handleView}
-              className="inline-flex items-center rounded-md bg-white px-3 py-2 text-sm font-semibold text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 hover:bg-gray-50"
+              className="inline-flex items-center rounded-md bg-white px-3 py-2 text-sm font-semibold text-gray-900 shadow-sm ring-1 ring-inset ring-gray-700 hover:bg-gray-50"
             >
               <svg
                 className="-ml-0.5 mr-1.5 h-5 w-5 text-gray-400"
@@ -142,7 +142,7 @@ const EditPost = ( props : any ) => {
             <button
               type="button"
               onClick={() => setMore(!more)}
-              className="inline-flex items-center rounded-md bg-white px-3 py-2 text-sm font-semibold text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 hover:ring-gray-400"
+              className="inline-flex items-center rounded-md bg-white px-3 py-2 text-sm font-semibold text-gray-900 shadow-sm ring-1 ring-inset ring-gray-700 hover:ring-gray-700-400"
               id="mobile-menu-button"
               aria-expanded="false"
               aria-haspopup="true"

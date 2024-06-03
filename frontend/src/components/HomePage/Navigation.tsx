@@ -3,19 +3,28 @@ import { logout } from "@/Redux/Slice/userSlice";
 import { useDispatch } from "react-redux";
 import { Link } from "react-router-dom";
 import { Button } from "../ui/button";
+import ToggleButton from "../ToggleButton";
+import { useNavigate } from "react-router-dom";
 const Navigation = () => {
   const [clicked,setClicked] = useState(false);
   const [clicked1,setClicked1] = useState(false);
   const [pic,setPic] = useState("");
   const dispatch = useDispatch();
+  const navigate = useNavigate();
   useEffect(() => {
     const data = localStorage.getItem("userInfo");
     const userInfo = JSON.parse(data as string) || null;
     setPic(userInfo?.pic);
   })
+
+  const handleSignOut = () => {
+    localStorage.removeItem("userInfo");
+    dispatch(logout());
+    navigate("/")
+  }
   return (
     <>
-      <nav className=" bg-gray-800 h-10">
+      <nav className=" bg-thirdcolor h-10">
         <div className="mx-auto h-10 max-w-7xl px-2 sm:px-6 lg:px-8">
           <div className="relative flex h-9 items-center justify-between">
             <div className="absolute inset-y-0 left-0 flex items-center sm:hidden">
@@ -109,6 +118,9 @@ const Navigation = () => {
                 </div>
               </div>
             </div>
+            <div>
+              <ToggleButton />
+            </div>
             <div className="absolute inset-y-0 right-0 flex items-center pr-2 sm:static sm:inset-auto sm:ml-6 sm:pr-0">
               <button
                 type="button"
@@ -182,7 +194,7 @@ const Navigation = () => {
                   <button
                     className="block px-4 py-2 text-sm text-gray-700"
                     role="menuitem"
-                    onClick={() => {dispatch(logout())}}
+                    onClick={() => {handleSignOut()}}
                     id="user-menu-item-2"
                   >
                     Sign out
@@ -190,8 +202,6 @@ const Navigation = () => {
                 </div>
                   )
                 }
-
-                
               </div>
             </div>
           </div>

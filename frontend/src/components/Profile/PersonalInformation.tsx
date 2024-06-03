@@ -56,10 +56,10 @@ const PersonalInformation = () => {
             Personal details and application.
           </p>
         </div>
-        <div className="mt-6 border-t border-gray-100">
+        <div className="mt-6 border-t border-gray-100 dark:text-white">
           <dl className="divide-y divide-gray-100">
             <div className="px-4 py-6 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-0">
-              <dt className="text-sm font-medium leading-6 text-gray-900">
+              <dt className="text-sm font-medium leading-6 text-gray-900 dark:text-white">
                 Username
               </dt>
               <dd className="mt-1 text-sm leading-6 text-gray-700 sm:col-span-2 sm:mt-0">
@@ -67,7 +67,7 @@ const PersonalInformation = () => {
               </dd>
             </div>
             <div className="px-4 py-6 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-0">
-              <dt className="text-sm font-medium leading-6 text-gray-900">
+              <dt className="text-sm font-medium leading-6 text-gray-900 dark:text-white">
                 Full Name
               </dt>
               <dd className="mt-1 text-sm leading-6 text-gray-700 sm:col-span-2 sm:mt-0">
@@ -75,7 +75,7 @@ const PersonalInformation = () => {
               </dd>
             </div>
             <div className="px-4 py-6 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-0">
-              <dt className="text-sm font-medium leading-6 text-gray-900">
+              <dt className="text-sm font-medium leading-6 text-gray-900 dark:text-white">
                 About
               </dt>
               <dd className="mt-1 text-sm leading-6 text-gray-700 sm:col-span-2 sm:mt-0">
@@ -83,7 +83,7 @@ const PersonalInformation = () => {
               </dd>
             </div>
             <div className="px-4 py-6 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-0">
-              <dt className="text-sm font-medium leading-6 text-gray-900">
+              <dt className="text-sm font-medium leading-6 text-gray-900 dark:text-white">
                 Email address
               </dt>
               <dd className="mt-1 text-sm leading-6 text-gray-700 sm:col-span-2 sm:mt-0">
@@ -91,7 +91,7 @@ const PersonalInformation = () => {
               </dd>
             </div>
             <div className="px-4 py-6 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-0">
-              <dt className="text-sm font-medium leading-6 text-gray-900">
+              <dt className="text-sm font-medium leading-6 text-gray-900 dark:text-white">
                 Country
               </dt>
               <dd className="mt-1 text-sm leading-6 text-gray-700 sm:col-span-2 sm:mt-0">
@@ -99,7 +99,7 @@ const PersonalInformation = () => {
               </dd>
             </div>
             <div className="px-4 py-6 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-0">
-              <dt className="text-sm font-medium leading-6 text-gray-900">
+              <dt className="text-sm font-medium leading-6 text-gray-900 dark:text-white">
                 State
               </dt>
               <dd className="mt-1 text-sm leading-6 text-gray-700 sm:col-span-2 sm:mt-0">
@@ -107,7 +107,7 @@ const PersonalInformation = () => {
               </dd>
             </div>
             <div className="px-4 py-6 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-0">
-              <dt className="text-sm font-medium leading-6 text-gray-900">
+              <dt className="text-sm font-medium leading-6 text-gray-900 dark:text-white">
                 City
               </dt>
               <dd className="mt-1 text-sm leading-6 text-gray-700 sm:col-span-2 sm:mt-0">
@@ -115,7 +115,7 @@ const PersonalInformation = () => {
               </dd>
             </div>
             <div className="px-4 py-6 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-0">
-              <dt className="text-sm font-medium leading-6 text-gray-900">
+              <dt className="text-sm font-medium leading-6 text-gray-900 dark:text-white">
                 Zipcode
               </dt>
               <dd className="mt-1 text-sm leading-6 text-gray-700 sm:col-span-2 sm:mt-0">
@@ -123,7 +123,7 @@ const PersonalInformation = () => {
               </dd>
             </div>
             <div className="px-4 py-6 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-0">
-              <dt className="text-sm font-medium leading-6 text-gray-900">
+              <dt className="text-sm font-medium leading-6 text-gray-900 dark:text-white">
                 Attachments
               </dt>
               <dd className="mt-2 text-sm text-gray-900 sm:col-span-2 sm:mt-0">

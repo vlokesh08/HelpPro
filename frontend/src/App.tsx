@@ -13,11 +13,11 @@ import EditFullPost from './pages/Posts/EditFullPosts'
 import ChatsPage from './pages/chats/ChatsPage'
 import 'react-toastify/dist/ReactToastify.css';
 import { ToastContainer } from 'react-toastify';
-
+import { ThemeProvider } from "@/components/theme-provider"
 function App() {
 
   return (
-    <>
+    <ThemeProvider defaultTheme="dark" storageKey="vite-ui-theme">
       <ProtectedRoute><Navigation /></ProtectedRoute>
       <ToastContainer autoClose={2000}/>
       <Routes>
@@ -32,7 +32,7 @@ function App() {
         <Route path="/chats" element={<ProtectedRoute><ChatsPage /></ProtectedRoute>}></Route>
 
       </Routes>
-    </>
+    </ThemeProvider>
   )
 }
 

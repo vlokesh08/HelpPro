@@ -23,6 +23,8 @@ const Login = () => {
   const navigate = useNavigate();
   const dispatch = useDispatch();
   const user = useSelector((state : any) => state.user);
+  console.log(user)
+  const BackendURL = process.env.REACT_APP_BACKEND_URL;
   const handleSubmit = async() => {
     console.log("lalalla");
     
@@ -42,16 +44,16 @@ const Login = () => {
           
       };
       const { data } = await axios.post(
-        "http://localhost:5000/api/user/login",
+        `http://localhost:5000/api/user/login`,
         { email, password },
         config
       );
       toast('Login Successfull')
       console.log(data);
       dispatch(loginSuccess(data));
+      localStorage.setItem("userInfo", JSON.stringify(data));
       navigate('/home');
 
-      localStorage.setItem("userInfo", JSON.stringify(data));
     } catch (error) {
       dispatch(loginFailure());
       toast('Invalid Credentials')

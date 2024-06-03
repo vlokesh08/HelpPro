@@ -25,7 +25,7 @@ const HomePageProfiles = () => {
           });
       }, []);
       return (
-        <div className="flex flex-col items-center mb-4 rounded-2xl ring-1 ring-gray-200 shadow-lg p-5">
+        <div className=" dark:bg-thirdcolor  text-black dark:text-white flex flex-col items-center mb-4 rounded-2xl ring-1 ring-gray-700 shadow-lg p-5">
           <h4 className='mb-3 font-bold'>Profiles</h4>
           {
             profiles?.map((profile : any) => {
@@ -37,8 +37,8 @@ const HomePageProfiles = () => {
                     className="w-12 h-12 rounded-full mr-4"
                   />
                   <div>
-                    <p className="font-semibold text-sm">{profile.firstName} {profile.lastName}</p>
-                    <p className="text-gray-600 text-sm">@{profile.username}</p>
+                    <p className="font-semibold text-sm text-black dark:text-white">{profile.firstName} {profile.lastName}</p>
+                    <p className=" text-sm text-black dark:text-">@{profile.username}</p>
                   </div>
                 </div>
               )

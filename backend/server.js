@@ -20,30 +20,29 @@ app.use(express.json());
 app.use(bodyParser.json());
 app.use(cors());
 
-
 app.get('/', (req, res) => {
     res.send('Hello World!');
 });
-app.get('/lala', async (req, res) => {
-    // const { owner, repo } = req.params;
-    const owner = 'temp';
-    const repo = 'temp';
-    const githubToken = process.env.GITHUB_TOKEN; // Replace with your GitHub token
+// app.get('/lala', async (req, res) => {
+//     // const { owner, repo } = req.params;
+//     const owner = 'temp';
+//     const repo = 'temp';
+//     const githubToken = process.env.GITHUB_TOKEN; // Replace with your GitHub token
   
-    try {
-      const response = await axios.get(`https://api.github.com/repos/${owner}/${repo}/issues`, {
-        headers: {
-          'Authorization': `token ${githubToken}`,
-          'Accept': 'application/vnd.github.v3+json'
-        }
-      });
+//     try {
+//       const response = await axios.get(`https://api.github.com/repos/${owner}/${repo}/issues`, {
+//         headers: {
+//           'Authorization': `token ${githubToken}`,
+//           'Accept': 'application/vnd.github.v3+json'
+//         }
+//       });
   
-      res.json(response.data);
-    } catch (error) {
-      console.error(error);
-      res.status(500).send('Error fetching issues from GitHub');
-    }
-  });
+//       res.json(response.data);
+//     } catch (error) {
+//       console.error(error);
+//       res.status(500).send('Error fetching issues from GitHub');
+//     }
+//   });
 app.use('/api/user', userRoutes);
 app.use('/api/profile', profileRoutes);
 app.use('/api/posts', postsRoutes);

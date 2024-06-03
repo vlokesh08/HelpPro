@@ -31,7 +31,7 @@ const Profile = () => {
       <div className="container">
         <div className="grid grid-cols-1  md:grid-cols-2 lg:grid-cols-4 gap-4">
           <div className="col-span-1 mt-12">
-            <div className="bg-white rounded-3xl ring-1 ring-gray-200 shadow-lg p-4">
+            <div className="bg-white rounded-3xl ring-1 ring-gray-700 shadow-lg p-4">
               <img className=" rounded-full" src={user.pic} alt="user profile"></img>
               <div className="text-center m-5 flex flex-col gap-3">
               <Button className="opacity-60" onClick={() => renderComponent('PersonalInformation')}>

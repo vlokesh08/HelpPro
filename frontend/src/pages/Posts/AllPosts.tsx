@@ -21,18 +21,18 @@ function formatDate(dateString : string) {
 }
 const Post = ({ post }: any) => {
   return (
-    <div className="">
-      <div className="mx-auto mt-3 max-w-2xl rounded-3xl ring-1 ring-gray-200 sm:mt-3 lg:mx-0 lg:flex lg:max-w-none">
+    <div className="text-black dark:text-white dark:bg-secondcolor">
+      <div className="mx-auto mt-3 max-w-2xl rounded-3xl ring-1 ring-gray-700 sm:mt-3 lg:mx-0 lg:flex lg:max-w-none">
         <div className="p-6 sm:p-8 lg:flex-auto">
           <div className="flex flex-row text-center gap-3 mb-2">
             <Avatar>
               <AvatarImage src={post.author.pic} alt="@shadcn" />
               <AvatarFallback>CN</AvatarFallback>
             </Avatar>
-            <h1>{post.author.firstName}</h1>
+            <h1 className="text-black dark:text-white">{post.author.firstName}</h1>
             <h2>{post.author.username}</h2>
           </div>
-          <h3 className="text-lg font-bold tracking-tight text-gray-900">
+          <h3 className="text-lg font-bold tracking-tight text-gray-900 dark:text-white">
             {post.title}
           </h3>
           <p className="mt-2 text-base leading-6 text-gray-600">{post.body}</p>
@@ -69,11 +69,11 @@ const Post = ({ post }: any) => {
           </ul>
         </div>
         <div className="-mt-1 p-1 lg:mt-0 lg:w-full lg:max-w-xs lg:flex-shrink-0">
-          <div className="rounded-3xl bg-gray-50 py-6 text-center ring-1 ring-inset ring-gray-900/5 lg:flex lg:flex-col lg:justify-center lg:py-8">
+          <div className="rounded-3xl dark:bg-thirdcolor py-6 text-center ring-1 ring-inset ring-gray-700-900/5 lg:flex lg:flex-col lg:justify-center lg:py-8">
             <div className="mx-auto max-w-xs px-4">
               <p className="text-sm font-semibold text-gray-600">Bounty!!</p>
               <p className="mt-3 flex items-baseline justify-center gap-x-1">
-                <span className="text-base font-bold tracking-tight text-gray-900">
+                <span className="text-base font-bold tracking-tight text-gray-900 dark:text-white">
                   {post.bounty[0]} - {post.bounty[1]}
                 </span>
                 <span className="text-xs font-semibold leading-6 tracking-wide text-gray-600">
@@ -120,7 +120,7 @@ const Post = ({ post }: any) => {
 
 const AddPostButton = () => {
   return (
-    <div className="flex flex-col gap-3 w-full items-center justify-center bg-white rounded-2xl ring-1 ring-gray-200 shadow-lg p-4 mb-4">
+    <div className=" dark:bg-thirdcolor flex flex-col gap-3 w-full items-center justify-center text-black dark:text-white rounded-2xl ring-1 ring-gray-700 shadow-lg p-4 mb-4">
       <h3>Want Help with your Project?</h3>
       <a href="/addnewpost">
         <Button className="bg-indigo-600 hover:bg-indigo-600 text-white font-bold py-2 px-4 rounded w-full h-1/2">
@@ -156,13 +156,13 @@ const Instagram = () => {
   return (
     <div className="container">
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
-        <div className="col-span-3">
+        <div className="col-span-3 mt-4">
           <PostFilter />
           {posts?.map((post: { id: string }) => (
             <Post key={post.id} post={post} />
           ))}
         </div>
-        <div className="rounded-2xl ring-1 ring-gray-200 p-5 mt-4">
+        <div className="rounded-2xl ring-1 ring-gray-700 p-5 mt-4 dark:bg-secondcolor">
           <AddPostButton />
           <HomePageProfiles />
         </div>
